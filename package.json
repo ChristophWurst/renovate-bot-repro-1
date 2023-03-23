@@ -1,0 +1,22 @@
+{
+  "name": "renovate-bot-repro-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristophWurst/renovate-bot-repro-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChristophWurst/renovate-bot-repro-1/issues"
+  },
+  "homepage": "https://github.com/ChristophWurst/renovate-bot-repro-1#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0"
+  }
+}
