@@ -1,0 +1,40 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:base",
+		":semanticCommits"
+	],
+	"timezone": "Europe/Vienna",
+	"schedule": [
+		"before 5am on wednesday"
+	],
+	"commitMessageAction": "Bump",
+	"commitMessageTopic": "{{depName}}",
+	"commitMessageExtra": "from {{currentVersion}} to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+	"rangeStrategy": "bump",
+	"rebaseWhen": "conflicted",
+	"ignoreUnstable": false,
+	"baseBranches": [
+		"main",
+		"stable1",
+		"stable2"
+	],
+	"enabledManagers": [
+		"npm"
+	],
+	"packageRules": [
+		{
+			"description": "do not open regular bumps for stable branches",
+			"enabled": false,
+			"matchBaseBranches": "/^stable(.)+/"
+		}
+	],
+	"vulnerabilityAlerts": {
+		"enabled": true,
+		"semanticCommitType": "fix",
+		"schedule": "before 7am every weekday",
+		"dependencyDashboardApproval": false,
+		"commitMessageSuffix": ""
+	},
+	"osvVulnerabilityAlerts": true
+}
